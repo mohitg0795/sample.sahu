@@ -24,8 +24,12 @@ pipeline:
                       type: Inline
                       spec:
                         script: |
-                          echo <+trigger.branch>
-                          echo <+trigger.branch>.contains("new")>
+                          echo <+ var identityFunction = function(keyNameInput) {
+                               return keyNameInput.startsWith("key") ? "hello" : "bye";
+                          }
+                             var keyName = "keyName"; // or another string
+                             identityFunction(keyName);
+                          >
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
