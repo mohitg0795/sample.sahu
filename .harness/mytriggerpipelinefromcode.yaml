@@ -26,7 +26,6 @@ pipeline:
                         script: |
                           echo <+trigger.branch>
                           echo <+trigger.branch>.contains("new")
-                          echo <+<+trigger.branch>.startsWith(“my-custom-branch”)?<+trigger.branch>:”main">
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
