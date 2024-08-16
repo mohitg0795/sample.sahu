@@ -25,7 +25,7 @@ pipeline:
                       spec:
                         script: |
                           echo <+trigger.branch>
-                          echo <+trigger.branch>.contains("new")
+                          echo <+trigger.branch>.contains("new")>
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
