@@ -25,9 +25,9 @@ pipeline:
                       spec:
                         script: |
                           echo <+ var identityFunction = function(keyNameInput) {
-                               return keyNameInput.startsWith("key") ? "hello" : "bye";
+                               return keyNameInput.startsWith("key") ? <+trigger.branch> : "main";
                           }
-                             var keyName = "keyName"; // or another string
+                             var keyName = <+trigger.branch>; // or another string
                              identityFunction(keyName);
                           >
                     environmentVariables: []
