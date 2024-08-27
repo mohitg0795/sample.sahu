@@ -23,7 +23,7 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: echo hello
+                        script: echo key2val
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
