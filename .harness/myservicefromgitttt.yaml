@@ -1,0 +1,5 @@
+service:
+  name: myservicefromgitttt
+  identifier: myservicefromgitttt
+  orgIdentifier: abhilabs
+  projectIdentifier: labsproject
