@@ -23,7 +23,13 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: echo hello
+                        script: |
+                          echo <+ var identityFunction = function(keyNameInput) {
+                               return keyNameInput.startsWith("key") ? <+trigger.branch> : "main";
+                          }
+                             var keyName = <+trigger.branch>; // or another string
+                             identityFunction(keyName);
+                          >
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
