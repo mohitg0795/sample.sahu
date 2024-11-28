@@ -1,0 +1,24 @@
+service:
+  name: myservicefromgitttt
+  identifier: myservicefromgitttt
+  orgIdentifier: abhilabs
+  projectIdentifier: labsproject
+  serviceDefinition:
+    spec:
+      manifests:
+        - manifest:
+            identifier: myk8smanifest
+            type: K8sManifest
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: githubconnector
+                  gitFetchType: Branch
+                  paths:
+                    - manifest.yaml
+                  repoName: nginx_sample
+                  branch: main
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+    type: Kubernetes

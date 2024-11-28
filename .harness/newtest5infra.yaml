@@ -1,0 +1,13 @@
+infrastructureDefinition:
+  name: new-test5
+  identifier: newtest5
+  orgIdentifier: abhilabs
+  projectIdentifier: labsproject
+  environmentRef: newtest5
+  deploymentType: Kubernetes
+  type: KubernetesDirect
+  spec:
+    connectorRef: sample
+    namespace: default
+    releaseName: release-<+INFRA_KEY_SHORT_ID>
+  allowSimultaneousDeployments: false
