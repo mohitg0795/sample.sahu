@@ -1,4 +1,4 @@
 
 # sample.sahu
-fs
+fs test
 \
